@@ -35,7 +35,7 @@ long addN(long accumulator, int n) {
 void run() {
     int i;
     
-    for (i=0;i<= NUMBER_TIMES;i++){
+    for (i=1;i<= NUMBER_TIMES;i++){
         total_amount = addN (total_amount, NUMBER_ADDED);
     }
    
