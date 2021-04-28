@@ -1,6 +1,6 @@
+build-Debug
 Debug
-Makefile
-UOCProgrammeEC/Debug
+./Makefile
 Exercise02/*.txt
 Exercise02/*.mk
 Exercise04/*.txt

@@ -1,1 +1,0 @@
-../build-Debug/Exercise_06/main.c.o
