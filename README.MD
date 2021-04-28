@@ -255,12 +255,12 @@ EvenThread = 6
 A first execution of the code has been carried out and the following appears:
 
 ```
-OddThread:0
-OddThread:2
-OddThread:3
-OddThread:4
-EvenThread:5
-EvenThread:6
+OddThread = 0
+OddThread = 2
+OddThread = 3
+OddThread = 4
+EvenThread = 5
+EvenThread = 6
 
 .....
 
