@@ -3,27 +3,16 @@
 #include <semaphore.h>
 #include <unistd.h>
 
-sem_t mutex;
+void* siesta(void* arg)
 
-void* dormir(void* arg)
-
-{
-
-    //wait
+{    
     
-    sem_wait(&mutex);
+    printf("\n First..\n");
     
-    printf("\n Primero..\n");
+    sleep(4);    
     
-    //critical section
+    printf("\n Second..\n");
     
-    sleep(4);
-    
-    //signal
-    
-    printf("\n Segundo..\n");
-    
-    sem_post(&mutex);
 }
 
 
@@ -31,21 +20,19 @@ int main()
 
 {
 
-	sem_init(&mutex, 0, 1);
 
 	pthread_t t1,t2;
 
-	pthread_create(&t1,NULL,dormir,NULL);
+	pthread_create(&t1,NULL,siesta,NULL);
 
 	sleep(2);
 
-	pthread_create(&t2,NULL,dormir,NULL);
+	pthread_create(&t2,NULL,siesta,NULL);
 
 	pthread_join(t1,NULL);
 
 	pthread_join(t2,NULL);
 
-	sem_destroy(&mutex);
 
 	return 0;
 
