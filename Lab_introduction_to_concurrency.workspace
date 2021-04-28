@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="Lab_introduction_to_concurrency" Database="" Version="10000">
+  <Project Name="Exercise_02" Path="Exercise_02/Exercise_02.project" Active="Yes"/>
+  <Project Name="Exercise_04" Path="Exercise_04/Exercise_04.project" Active="No"/>
+  <Project Name="Exercise_05" Path="Exercise_05/Exercise_05.project" Active="No"/>
+  <Project Name="Exercise_07" Path="Exercise_07/Exercise_07.project" Active="No"/>
+  <Project Name="Exercise_06" Path="Exercise_06/Exercise_06.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="Exercise_02" ConfigName="Debug"/>
+      <Project Name="Exercise_04" ConfigName="Debug"/>
+      <Project Name="Exercise_05" ConfigName="Debug"/>
+      <Project Name="Exercise_07" ConfigName="Debug"/>
+      <Project Name="Exercise_06" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="Exercise_02" ConfigName="Release"/>
+      <Project Name="Exercise_04" ConfigName="Release"/>
+      <Project Name="Exercise_05" ConfigName="Release"/>
+      <Project Name="Exercise_07" ConfigName="Release"/>
+      <Project Name="Exercise_06" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
