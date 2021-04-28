@@ -28,6 +28,8 @@ int main() {
 void* print_ssoo(void *ptr) {
 
     pthread_mutex_lock(&mutex1);
+	
+	sleep(1);
     
     pthread_mutex_lock(&mutex2);
     
@@ -44,6 +46,8 @@ void* print_ssoo(void *ptr) {
 void* print_new_line(void *ptr) {
 
     pthread_mutex_lock(&mutex2);
+	
+	sleep(1);
     
     pthread_mutex_lock(&mutex1);
     

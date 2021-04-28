@@ -17,6 +17,19 @@ Given the following sequence diagram:
 
 Which of the following implementations ensures that action1 () always executes before action2 ()
 
+
+#### 1.1 Solution. Option A
+![Diagram_02](img/img2.png)
+
+#### 1.2 Solution. Option B
+![Diagram_03](img/img3.png)
+
+#### 1.3 Solution. Option C
+![Diagram_04](img/img4.png)
+
+#### 1.4 Solution. Option D
+![Diagram_05](img/img5.png)
+
 ###  Exercise 02
 
 What execution secuence will create a deadlock?
@@ -73,18 +86,41 @@ void* print_new_line(void *ptr) {
     pthread_exit(0);
 }
 ```
+#### 2 Solution. 
+![Diagram_06](img/img6.png)
+
+![Diagram_07](img/img7.png)
 
 ###  Exercise 03
 
 Given the following schema:
-| Process P1  	|   Process P2	|   	
-|---	|---	|	
-| ...	  	|   ...		|   	|   
-|   action1()	|   action2()	|   
+| Process P1  	|   Process P2	| 
+|---		|---		|	
+| ...	  	|   ...	| 
+|   action1()	|   action2()	| 
 		
 Assure that action1() always executes before action2(), using:
 - semaphores.
 - Mutex y conditional variables.
+
+#### 3.1 Solution with semaphores. Option A
+
+| Process P1  	|   Process P2	|	
+|---		|---		|	
+| ...	  	|   ...	| 
+|   action1()	|   wait(s)	| 
+|   signal(s)	|   action2()	| 
+
+#### 3.1 Solution with mutex. Option B
+
+| Process P1  			|   Process P2				|	
+|---				|	---				|	
+| ...	  			|   ...				| 
+|   action1();			|  lock (mutex);			| 
+|   lock(mutex);		|  while(continue != true) {		| 
+|   continue = true;		|   	cond_wait(mutex, var_cond);	| 
+|   cond_signal(var_cond);	|   }					| 
+|   unlock (mutex);		|  action2();				| 
 
 ###  Exercise 04
 
@@ -166,7 +202,7 @@ int main() {
 } 
 ```
 
-###  Exercise 05
+###  Exercise 06
 
 Write a program that: 
 
@@ -177,7 +213,7 @@ Write a program that:
 What happens if concurrency control is not used? 
 Use semaphores so that the sum always has the same value at the end of the program.
 
-###  Exercise 06
+###  Exercise 07
 
 The following code implements an application with two threads: one prints the even numbers on the screen and the other prints the odd numbers on the screen.
 

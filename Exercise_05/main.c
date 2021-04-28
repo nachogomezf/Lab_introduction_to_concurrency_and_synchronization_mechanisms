@@ -3,8 +3,13 @@
 
 #include <stdio.h>
 #include <pthread.h>
+#include <semaphore.h>
+
 #define NUMBER_ADDED 10000
 #define NUMBER_TIMES 10000
+
+
+sem_t semaphore;
 
 /** 
 * Global variable with the accumulated value where the sum is made.
@@ -35,8 +40,16 @@ long addN(long accumulator, int n) {
 void run() {
     int i;
     
-    for (i=0;i<= NUMBER_TIMES;i++){
+    for (i=1;i<= NUMBER_TIMES;i++){
+		 //wait
+		sem_wait(&semaphore);
+		
+		//critical section
         total_amount = addN (total_amount, NUMBER_ADDED);
+		 
+		 //signal        
+		sem_post(&semaphore);
+	
     }
    
    
@@ -52,7 +65,9 @@ int main() {
     
     pthread_t th1, th2;
     long expected_result;
-        
+	
+	sem_init(&semaphore, 0, 1);
+	
     // creamos 2 hilos
     pthread_create(&th1,NULL,(void*)run, NULL);
     pthread_create(&th2,NULL,(void*)run, NULL);
@@ -68,5 +83,6 @@ int main() {
         if (total_amount != expected_result)
             printf("DO NOT MATCH!!!\n");
         
-
+	sem_destroy(&semaphore);
+	
 } 
