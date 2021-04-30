@@ -204,17 +204,6 @@ int main() {
 
 ###  Exercise 06
 
-Write a program that: 
-
-- Creates a vector of 100 elements initialized to1 and a global variable “suma” to 0. 
-- It then creates 2 threads, each of which adds the vector elements to the global variable. 
-- At the end the sum value is printed. 
-
-What happens if concurrency control is not used? 
-Use semaphores so that the sum always has the same value at the end of the program.
-
-###  Exercise 07
-
 The following code implements an application with two threads: one prints the even numbers on the screen and the other prints the odd numbers on the screen.
 
 ```
