@@ -130,7 +130,7 @@ The function of “siesta” thread is to sleep 4 seconds.
 
 ###  Exercise 05
 
-Analyze the following program and say what the value of "data" will be. If there is any problem, fix it with semaphores.
+Analyze the following program and say what the value of "total_amount" will be. If there is any problem, fix it with semaphores.
 
 ```
 /* compile as "gcc -pthread -o main.c main" */
