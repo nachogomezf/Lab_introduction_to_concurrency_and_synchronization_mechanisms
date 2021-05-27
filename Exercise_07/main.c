@@ -9,8 +9,8 @@
 #define MAX_ITEMS 10000 // aximum items a producer can produce or a consumer can consume
 
 #define BUFFER_SIZE 1000 // Size of the buffer
-#define NUMBER_PRODUCERS 1
-#define NUMBER_CONSUMERS 1
+#define NUMBER_PRODUCERS 100
+#define NUMBER_CONSUMERS 100
 
 
 pthread_cond_t non_full; /* can we add more elements? */
